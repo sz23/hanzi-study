@@ -1,0 +1,7 @@
+.container
+  .row
+    %h1 Hanzi#home
+    %p Find me in app/views/hanzi/home.html.haml
+    = form_tag :controller => "hanzi", :action => "analizar"
+    = text_area_tag :texto, nil, class: "span9 txtinput"
+    = submit_tag "Analizar", :class => "btn btn-primary pull-right"

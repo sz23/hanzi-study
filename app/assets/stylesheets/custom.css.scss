@@ -1,0 +1,91 @@
+@import "bootstrap";
+
+/*
+* Estructura de la web
+*/
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    height: auto !important;
+    margin: 0 auto -60px;
+    min-height: 100%;
+}
+
+#push {
+    height: 60px;
+}
+
+#footer {
+    height: 60px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: 680px;
+    width: auto;
+
+    .credit {
+        margin: 20px 0;
+    }
+}
+
+.contenido {
+  margin-top: 40px;
+}
+
+.txtinput {
+    height: 200px;
+    resize: none;
+}
+
+/*
+* Configuracion de la rejilla de Hanzi
+*/
+.hanzi-grid {
+    overflow:  visible;
+}
+
+.hanzi-cell {
+    text-align: center;
+    border-radius: 7px;
+    cursor:  pointer;
+    float:   left;
+    margin:  10px;
+    padding: 20px;
+    padding-top: 30px;
+    width:   60px;
+    height:  50px;
+    background-color: #F3F3F3;
+    border: 1px solid #C2C2C2;
+
+    .hanzi {
+        font-size:  350%;
+    }
+
+    .hanzi-times {
+        font-size: 0.8em;
+    }
+
+    span.label {
+    font-size: 0.7em;
+    position: absolute;
+    padding: 0 2px;
+    margin: 52px 0 0 -38px;
+    }
+}
+
+.hanzi-cell:hover {
+    color: white;
+    background-color: #0088CC !important;
+}
+
+.seleccionado {
+    color: white;
+    background-color: #0088CC !important;
+}

@@ -1,0 +1,31 @@
+.span11.offset2
+  %br
+  .row
+    %h1
+      = "Hanzi Spectrum: #{@hanzis.size} #{"character".pluralize @hanzis.size}"
+      %button.exportar-btn.pull-right.btn.btn-primary Exportar
+  %hr
+    = render :partial => 'botonera'
+  %hr
+  .row.contenido
+    .hanzi-spectrum
+      .hanzi-grid
+        - @hanzis.each do |hanzi|
+          - if HSK_HANZIS.has_key? hanzi[0]
+            - level = "HSK#{HSK_HANZIS[hanzi[0]][:level]}"
+            - pinyin = PinyinConverter::number_to_utf8 HSK_HANZIS[hanzi[0]][:pinyin]
+            - trad = "#{HSK_HANZIS[hanzi[0]][:tradicional]}"
+            - tooltip_txt = "Pinyin: #{pinyin}<br>Traditional: #{trad}"
+          %span{:class => "hanzi-info hanzi-cell #{level}",
+                :data  => { :animation => "true",
+                            :html      => "true",
+                            :title     => "<center>Character information</center>",
+                            :toggle    => "popover",
+                            :content   => tooltip_txt,
+                            :pinyin    => pinyin,
+                            :trad      => trad}}
+            %span.hanzi= hanzi[0]
+            - if level.present?
+              %span.label.label-inverse= "#{level}"
+            %br
+            %span.hanzi-times= "#{hanzi[1]} #{"time".pluralize(hanzi[1])}"

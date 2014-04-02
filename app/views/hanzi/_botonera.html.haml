@@ -1,0 +1,18 @@
+.row
+  / Filtros por nivel HSK
+  .filtros.pull-left
+    %span= "Filtrar por nivel:"
+    - 6.times do |i|
+      %button.btn.btn-mini= "HSK#{i+1}"
+
+  / Vista hanzis
+  .vistas.pull-right
+    %button.btn.set-view{:data => {:type => 'cuadricula'}}
+      = "Switch view: "
+      %i.icon-th
+      = "/"
+      %i.icon-th-list
+  / %button.btn.set-view{:data => {:type => 'list'}}
+  /%i.icon-th-list
+  /= "Lista"
+

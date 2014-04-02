@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+  %meta{:charset => "utf-8"}
+  %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+  %meta{:content => "", :name => "description"}
+  %meta{:content => "", :name => "author"}
+  %title= StudyCenter
+  = stylesheet_link_tag    "application", :media => "all"
+  = csrf_meta_tags
+  %body
+    %div#wrap
+      /.container
+      .row
+        = render 'layouts/header'
+        .contenido
+          = yield
+      %div#push
+    = render 'layouts/footer'
+    = javascript_include_tag "application"
+
